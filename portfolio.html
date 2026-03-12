@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+background:#050505;
+color:#e6e6e6;
+font-family:"Share Tech Mono", monospace;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.9);
+border-bottom:1px solid #1a1a1a;
+z-index:999
+}
+
+nav h1{
+font-family:Orbitron;
+color:#ff2a2a;
+letter-spacing:2px
+}
+
+nav ul{display:flex;gap:25px;list-style:none}
+
+nav a{
+text-decoration:none;
+color:#ccc;
+font-size:14px;
+transition:.3s
+}
+
+nav a:hover{color:#ff2a2a}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:radial-gradient(circle at center,#1a0000 0%,#050505 70%)
+}
+
+.glitch{
+font-family:Orbitron;
+font-size:60px;
+color:white;
+position:relative;
+animation:glitch 2s infinite
+}
+
+@keyframes glitch{
+0%{text-shadow:2px 0 red,-2px 0 black}
+25%{text-shadow:-2px 0 red,2px 0 black}
+50%{text-shadow:2px 0 red,-2px 0 black}
+75%{text-shadow:-2px 0 red,2px 0 black}
+100%{text-shadow:2px 0 red,-2px 0 black}
+}
+
+.hero p{
+margin-top:15px;
+opacity:.8;
+max-width:650px
+}
+
+.typing{
+color:#ff2a2a;
+margin-top:10px
+}
+
+.btn{
+margin-top:30px;
+padding:12px 25px;
+border:1px solid #ff2a2a;
+text-decoration:none;
+color:white;
+transition:.3s
+}
+
+.btn:hover{background:#ff2a2a}
+
+section{
+padding:100px 10%;
+max-width:1200px;
+margin:auto
+}
+
+h2{
+font-family:Orbitron;
+color:#ff2a2a;
+margin-bottom:40px
+}
+
+/* PROJECTS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px
+}
+
+.card{
+background:#0f0f0f;
+border:1px solid #1a1a1a;
+padding:25px;
+transition:.3s;
+position:relative;
+overflow:hidden
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#ff2a2a
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,0,0,0.3),transparent);
+transition:.6s
+}
+
+.card:hover::before{left:100%}
+
+/* TERMINAL */
+.terminal{
+background:#000;
+border:1px solid #ff2a2a;
+padding:25px;
+font-size:14px
+}
+
+.terminal span{color:#ff2a2a}
+
+/* SKILLS */
+.skills span{
+display:inline-block;
+padding:8px 14px;
+margin:6px;
+border:1px solid #2a2a2a;
+background:#0f0f0f
+}
+
+/* CONTACT */
+.contact{text-align:center}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #1a1a1a;
+background:#000
+}
+
+/* MATRIX CANVAS */
+#boot-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+color:#ff2a2a;
+font-family:"Share Tech Mono", monospace;
+padding:40px;
+z-index:2000;
+transition:opacity .8s;
+}
+
+#boot-text div{
+margin:6px 0;
+font-size:14px;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="boot-screen">
+<div id="boot-text"></div>
+</div>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+<h1>CYBER</h1>
+<ul>
+<li><a href="#home">Accueil</a></li>
+<li><a href="#about">À propos</a></li>
+<li><a href="#projects">Projets</a></li>
+<li><a href="#skills">Compétences</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+
+<h1 class="glitch">CYBER SECURITY</h1>
+
+<p class="typing" id="typing"></p>
+
+<p>
+Étudiant en cybersécurité passionné par le pentest et le développement d'outils de sécurité.
+</p>
+
+<a class="btn" href="#projects">Voir mes projets</a>
+
+</section>
+
+<section id="about">
+<h2>À propos</h2>
+
+<div class="terminal">
+<p><span>root@kali</span>:~$ whoami</p>
+<p>Étudiant CIEL (cybersécurité, informatique et réseaux, électronique)</p>
+
+<p><span>root@kali</span>:~$ skills</p>
+<p>Python | Linux | Réseaux | Pentest | Lua </p>
+
+<p><span>root@kali</span>:~$ mission</p>
+<p>Développer des outils de sécurité et comprendre les attaques pour mieux protéger les systèmes.</p>
+</div>
+
+</section>
+
+<section id="projects">
+<h2>Projets</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>KiraSIEM</h3>
+<p>Mini SIEM capable de collecter des logs, détecter des attaques et afficher les alertes dans un dashboard SOC et d'envoyer les alertes par mail.</p>
+</div>
+
+<div class="card">
+<h3>Python MultiTools</h3>
+<p>Tools fait en python capable de retrouver des information personnels sur une personne grace a des base de donnée qui on été mis a disposition sur internet.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+<h2>Compétences</h2>
+
+<div class="skills">
+<span>Python</span>
+<span>Linux</span>
+<span>Cybersecurity</span>
+<span>SIEM</span>
+<span>Pentesting</span>
+<span>Lua</span>
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>Discord : kiraroot</p>
+<p>GitHub : github.com/Kira-Root</p>
+</section>
+
+<footer>
+<p>© 2026 Cybersecurity Portfolio</p>
+</footer>
+
+<script>
+
+/* TYPING EFFECT */
+
+const text = "Pentester | SOC Analyst | Cybersecurity Student";
+let i = 0;
+
+function typing(){
+ if(i < text.length){
+  document.getElementById("typing").innerHTML += text.charAt(i);
+  i++;
+  setTimeout(typing,50);
+ }
+}
+
+typing();
+
+/* MATRIX BACKGROUND */
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let x = 0; x < columns; x++)
+ drops[x] = 1;
+
+function draw(){
+ ctx.fillStyle = "rgba(0,0,0,0.05)";
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ ctx.fillStyle = "#ff2a2a";
+ ctx.font = fontSize + "px monospace";
+
+ for(let i=0;i<drops.length;i++){
+  const text = letters.charAt(Math.floor(Math.random()*letters.length));
+
+  ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+  if(drops[i]*fontSize > canvas.height && Math.random()>0.975)
+   drops[i]=0;
+
+  drops[i]++;
+ }
+}
+
+setInterval(draw,33);
+
+
+
+/* KALI BOOT SIMULATION */
+
+const bootLines = [
+"Booting Kali GNU/Linux...",
+"Loading kernel modules...",
+"Initializing network interfaces...",
+"Starting OpenSSH service...",
+"Mounting file systems...",
+"Starting security services...",
+"Launching SOC monitoring tools...",
+"Loading penetration testing environment...",
+"System ready.",
+"root@kali:~# access granted"
+];
+
+let bootIndex = 0;
+const bootContainer = document.getElementById("boot-text");
+
+function showBoot(){
+
+if(bootIndex < bootLines.length){
+
+const line = document.createElement("div");
+line.textContent = bootLines[bootIndex];
+bootContainer.appendChild(line);
+
+bootIndex++;
+
+setTimeout(showBoot, 400);
+
+}else{
+
+setTimeout(()=>{
+ document.getElementById("boot-screen").style.opacity = "0";
+ setTimeout(()=>{
+  document.getElementById("boot-screen").style.display = "none";
+ },800);
+},1000);
+
+}
+}
+
+showBoot();
+
+</script>
+
+</body>
+</html>
