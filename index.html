@@ -259,6 +259,8 @@ display:flex;
 
 <canvas id="matrix"></canvas>
 
+<!-- Bar de navigation -->
+
 <nav>
 <h1>Portfolio</h1>
 
@@ -267,6 +269,7 @@ display:flex;
 <span></span>
 <span></span>
 </div>
+
 
 <ul id="menu">
 <li><a href="#home">Accueil</a></li>
@@ -278,6 +281,8 @@ display:flex;
 </nav>
 <section class="hero" id="home">
 
+<!-- Section Acceuil -->
+
 <h1 class="glitch">Portfolio KiraRoot</h1>
 
 <p class="typing" id="typing"></p>
@@ -287,6 +292,8 @@ display:flex;
 </p>
 
 <a class="btn" href="#projects">Voir mes projets</a>
+
+<!-- Section A propos de moi  -->
 
 </section>
 
@@ -304,29 +311,42 @@ display:flex;
 <p>Développer des outils de sécurité et comprendre les attaques pour mieux protéger les systèmes.</p>
 </div>
 
-</section>
+<!-- Section Projet -->
 
-<section id="projects">
-<h2>Projets</h2>
+</section>
 
 <div class="grid">
 
+<section class="hero" id="projects">
+
+<h1 class="glitch">Projets</h1>
+
+<p class="typing" id="typing"></p>
+
+<!-- Carte des projet effectué -->
+    
 <div class="card">
 <h3>KiraSIEM</h3>
 <p>Mini SIEM capable de collecter des logs, détecter des attaques et afficher les alertes dans un dashboard SOC et d'envoyer les alertes par mail.</p>
+<li><a href="https://github.com/Kira-Root">Lien vers le projet</a></li>
 </div>
 
 <div class="card">
 <h3>Python MultiTools</h3>
 <p>Tools fait en python capable de retrouver des information personnels sur une personne grace a des base de donnée qui on été mis a disposition sur internet.</p>
+<li><a href="https://github.com/Kira-Root">Lien vers le projet</a></li>
 </div>
 
 <div class="card">
 <h3>Password Manager</h3>
 <p>Tools qui est fait pour stocker les mots de passe tout en sécurité fait pour évité que vos mots de passe soit mis sur une application.</p>
+<li><a href="https://github.com/Kira-Root">Lien vers le projet</a></li>
 </div>
 
+
 </div>
+
+<!-- Section skills -->
 
 </section>
 
@@ -341,6 +361,9 @@ display:flex;
 <span>Pentesting</span>
 <span>Lua</span>
 </div>
+<!-- Pour ajouter un skill rajoute <span>Ton Skills</span> avant </div> -->
+
+<!-- Section Contact-->
 
 </section>
 
@@ -350,11 +373,15 @@ display:flex;
 <p>GitHub : github.com/Kira-Root</p>
 </section>
 
+<!-- Bas de page -->
+
 <footer>
 <p>© 2026 Cybersecurity Portfolio</p>
 </footer>
 
 <script>
+
+/* Menu Téléphone */
 
 function toggleMenu(){
 const menu = document.getElementById("menu");
@@ -370,7 +397,7 @@ function typing(){
  if(i < text.length){
   document.getElementById("typing").innerHTML += text.charAt(i);
   i++;
-  setTimeout(typing,50);
+  setTimeout(typing,150);
  }
 }
 
